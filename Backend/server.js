@@ -1,6 +1,8 @@
 const { default: axios } = require('axios');
 const express= require('express')
+const cors= require('cors')
 const app= express();
+app.use(cors())
 
 app.get('/suggestContries', async (req,res)=>{
     try{
@@ -14,6 +16,18 @@ app.get('/suggestContries', async (req,res)=>{
     }catch(error){
         console.error(error);
         res.status(500).json({ error: 'API request failed' });
+    }
+})
+
+app.get('/checkEntry', async (req,res)=>{
+    try{
+        const value=req.query.param
+        const response= await axios.get(`https://restcountries.com/v3.1/name/${value}?fullText=true`);
+        console.log(response)
+        res.json({status:response.status,data:response.data})
+    }catch(error){
+        console.error(error);
+        res.json({ status:404,data: 'Not Found' });
     }
 })
 

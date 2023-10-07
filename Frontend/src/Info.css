@@ -1,0 +1,41 @@
+.searchbar {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.searchbar input{
+    width: 40%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 24px;
+}
+
+.icon{
+  position: absolute;
+  top: 21px;
+  left: 68%;
+  font-size: 15px;
+  color: grey;
+  cursor: pointer;
+}
+.home-icon{
+  position: absolute;
+  top: 21px;
+  left: 10%;
+  font-size: 25px;
+  cursor: pointer;
+}
+.home{
+  position: absolute;
+  top: 0px;
+  left: 12%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.hr{
+    margin-left: 60px;
+    margin-right: 60px;
+}
